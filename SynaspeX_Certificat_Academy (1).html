@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Certificat SynaspeX Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1206;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:30px;font-family:'DM Sans',sans-serif}
+
+.cert-outer{position:relative;width:100%;max-width:880px}
+.cert{
+  background:#FFFDF5;
+  width:100%;
+  aspect-ratio:1.414/1;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+/* CORNER ORNAMENTS */
+.corner{position:absolute;width:90px;height:90px}
+.corner svg{width:100%;height:100%}
+.corner.tl{top:0;left:0}
+.corner.tr{top:0;right:0;transform:scaleX(-1)}
+.corner.bl{bottom:0;left:0;transform:scaleY(-1)}
+.corner.br{bottom:0;right:0;transform:scale(-1)}
+
+/* BORDER FRAMES */
+.frame-outer{position:absolute;inset:16px;border:2px solid #B8960C;pointer-events:none}
+.frame-inner{position:absolute;inset:22px;border:0.5px solid rgba(184,150,12,0.4);pointer-events:none}
+.frame-dots{position:absolute;inset:19px;border:1px dashed rgba(184,150,12,0.25);pointer-events:none}
+
+/* TOP ORNAMENT LINE */
+.top-line{position:absolute;top:50px;left:60px;right:60px;display:flex;align-items:center;gap:0}
+.line-seg{flex:1;height:1px;background:linear-gradient(90deg,transparent,#B8960C,transparent)}
+.line-diamond{width:8px;height:8px;background:#B8960C;transform:rotate(45deg);flex-shrink:0}
+.bot-line{position:absolute;bottom:50px;left:60px;right:60px;display:flex;align-items:center;gap:0}
+
+/* LOGO / SEAL AREA */
+.cert-top{position:absolute;top:62px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.agency-mark{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.mark-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#4F46E5,#059669);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;color:#fff;letter-spacing:-0.5px}
+.agency-name{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#4F46E5;letter-spacing:3px;text-transform:uppercase}
+.academy-sub{font-family:'Cormorant Garamond',serif;font-size:11px;color:#8B7355;letter-spacing:4px;text-transform:uppercase}
+
+/* MAIN CONTENT */
+.cert-body{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 80px;text-align:center}
+.cert-declares{font-family:'Cormorant Garamond',serif;font-size:13px;color:#8B7355;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.cert-name{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:600;color:#1A1206;line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px}
+.cert-name-line{width:220px;height:1.5px;background:linear-gradient(90deg,transparent,#B8960C,transparent);margin:0 auto 16px}
+.cert-completed{font-family:'Cormorant Garamond',serif;font-size:14px;color:#8B7355;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.cert-course{font-family:'Playfair Display',serif;font-size:clamp(16px,2.5vw,24px);font-weight:700;color:#2D1B00;margin-bottom:6px;letter-spacing:0.5px}
+.cert-domain{display:inline-block;background:linear-gradient(135deg,#4F46E5,#059669);color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;padding:5px 18px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.cert-desc{font-family:'Cormorant Garamond',serif;font-size:14px;color:#8B7355;line-height:1.6;max-width:500px;font-style:italic}
+
+/* SEAL */
+.seal-area{position:absolute;bottom:70px;right:80px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.seal{width:80px;height:80px;position:relative}
+.seal-ring{width:80px;height:80px;border-radius:50%;border:2px solid #B8960C;display:flex;align-items:center;justify-content:center;position:relative}
+.seal-ring::before{content:'SYNASPEX ACADEMY · CERTIFIED ·';position:absolute;width:100%;height:100%;border-radius:50%;font-size:6px;font-family:'DM Sans',sans-serif;font-weight:600;color:#B8960C;letter-spacing:2px;text-align:center;display:flex;align-items:flex-start;justify-content:center;padding-top:6px}
+.seal-inner{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#4F46E5,#059669);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:800;font-size:16px;color:#fff;letter-spacing:-0.5px}
+.seal-label{font-family:'Cormorant Garamond',serif;font-size:9px;color:#8B7355;letter-spacing:2px;text-transform:uppercase}
+
+/* SIGNATURE AREA */
+.sig-area{position:absolute;bottom:70px;left:80px}
+.sig-line{width:150px;height:1px;background:#B8960C;margin-bottom:6px}
+.sig-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:600;color:#2D1B00;margin-bottom:2px}
+.sig-role{font-family:'Cormorant Garamond',serif;font-size:11px;color:#8B7355;letter-spacing:1px}
+.sig-script{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#2D1B00;margin-bottom:4px;opacity:0.5}
+
+/* DATE & NUMBER */
+.cert-meta{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);text-align:center}
+.cert-date{font-family:'Cormorant Garamond',serif;font-size:12px;color:#8B7355;letter-spacing:1px}
+.cert-num{font-family:'DM Sans',sans-serif;font-size:10px;color:#B8B096;margin-top:4px;letter-spacing:2px}
+
+/* WATERMARK */
+.watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0.03}
+.watermark-text{font-family:'Playfair Display',serif;font-size:140px;font-weight:700;color:#4F46E5;transform:rotate(-30deg);white-space:nowrap}
+
+/* EDIT PANEL */
+.edit-panel{background:#1A1206;border:1px solid rgba(184,150,12,0.2);border-radius:16px;padding:24px;margin-top:20px}
+.edit-panel h3{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#B8960C;margin-bottom:16px;letter-spacing:.05em;text-transform:uppercase}
+.edit-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.edit-group{display:flex;flex-direction:column;gap:5px}
+.edit-group label{font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.07em}
+.edit-group input,.edit-group select{background:rgba(255,255,255,0.05);border:1px solid rgba(184,150,12,0.2);border-radius:8px;padding:9px 12px;font-size:13px;color:#fff;font-family:'DM Sans',sans-serif;outline:none}
+.edit-group input:focus,.edit-group select:focus{border-color:rgba(184,150,12,0.5)}
+.edit-group select option{background:#1A1206}
+.print-btn{width:100%;background:linear-gradient(135deg,#B8960C,#D4AF37);color:#1A1206;padding:12px;border-radius:12px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:4px;transition:all .2s}
+.print-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(184,150,12,0.3)}
+
+@media print{
+  body{background:#fff;padding:0;margin:0}
+  .cert{box-shadow:none;max-width:none;width:100%;height:100vh}
+  .edit-panel,.cert-outer > *:not(.cert){display:none}
+  .cert-outer{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cert-outer">
+  <!-- CERTIFICATE -->
+  <div class="cert" id="certificate">
+
+    <!-- WATERMARK -->
+    <div class="watermark"><div class="watermark-text">SynaspeX</div></div>
+
+    <!-- FRAMES -->
+    <div class="frame-outer"></div>
+    <div class="frame-dots"></div>
+    <div class="frame-inner"></div>
+
+    <!-- CORNER ORNAMENTS -->
+    <div class="corner tl">
+      <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0 L90 0 L90 8 L8 8 L8 90 L0 90 Z" fill="#B8960C" opacity="0.6"/>
+        <path d="M16 16 L60 16" stroke="#B8960C" stroke-width="0.5" opacity="0.5"/>
+        <path d="M16 16 L16 60" stroke="#B8960C" stroke-width="0.5" opacity="0.5"/>
+        <circle cx="16" cy="16" r="4" fill="#B8960C" opacity="0.7"/>
+        <circle cx="16" cy="16" r="2" fill="#B8960C"/>
+        <path d="M24 16 L40 16 M16 24 L16 40" stroke="#B8960C" stroke-width="0.5" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="corner tr">
+      <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0 L90 0 L90 90 L82 90 L82 8 L0 8 Z" fill="#B8960C" opacity="0.6"/>
+        <path d="M74 16 L30 16" stroke="#B8960C" stroke-width="0.5" opacity="0.5"/>
+        <path d="M74 16 L74 60" stroke="#B8960C" stroke-width="0.5" opacity="0.5"/>
+        <circle cx="74" cy="16" r="4" fill="#B8960C" opacity="0.7"/>
+        <circle cx="74" cy="16" r="2" fill="#B8960C"/>
+      </svg>
+    </div>
+    <div class="corner bl">
+      <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0 L8 0 L8 82 L90 82 L90 90 L0 90 Z" fill="#B8960C" opacity="0.6"/>
+        <circle cx="16" cy="74" r="4" fill="#B8960C" opacity="0.7"/>
+        <circle cx="16" cy="74" r="2" fill="#B8960C"/>
+      </svg>
+    </div>
+    <div class="corner br">
+      <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 82 L82 82 L82 0 L90 0 L90 90 L0 90 Z" fill="#B8960C" opacity="0.6"/>
+        <circle cx="74" cy="74" r="4" fill="#B8960C" opacity="0.7"/>
+        <circle cx="74" cy="74" r="2" fill="#B8960C"/>
+      </svg>
+    </div>
+
+    <!-- TOP ORNAMENT -->
+    <div class="top-line">
+      <div class="line-seg"></div>
+      <div class="line-diamond"></div>
+      <div style="width:8px"></div>
+      <div class="line-diamond"></div>
+      <div class="line-seg"></div>
+    </div>
+
+    <!-- HEADER LOGO -->
+    <div class="cert-top">
+      <div class="agency-mark">
+        <div class="mark-icon">Sx</div>
+        <div class="agency-name">SynaspeX</div>
+      </div>
+      <div class="academy-sub">Academy · Certification Officielle</div>
+    </div>
+
+    <!-- MAIN BODY -->
+    <div class="cert-body">
+      <div class="cert-declares">Ce certificat est décerné à</div>
+      <div class="cert-name" id="cert-name">Amadou Traoré</div>
+      <div class="cert-name-line"></div>
+      <div class="cert-completed">pour avoir complété avec succès</div>
+      <div class="cert-course" id="cert-course">Formation IA — Commerce & Retail</div>
+      <div style="height:10px"></div>
+      <div class="cert-domain" id="cert-domain">Commerce & Retail</div>
+      <div class="cert-desc" id="cert-desc">ayant démontré la maîtrise des outils d'intelligence artificielle appliqués à son domaine professionnel, à travers un programme intensif de 2 jours dispensé par SynaspeX Academy.</div>
+    </div>
+
+    <!-- BOTTOM LINE -->
+    <div class="bot-line">
+      <div class="line-seg"></div>
+      <div class="line-diamond"></div>
+      <div style="width:8px"></div>
+      <div class="line-diamond"></div>
+      <div class="line-seg"></div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="sig-area">
+      <div class="sig-script" id="cert-sig-script">A. Traoré</div>
+      <div class="sig-line"></div>
+      <div class="sig-name" id="cert-sig-name">Amadou Traoré</div>
+      <div class="sig-role">Founder & CEO, SynaspeX</div>
+    </div>
+
+    <!-- DATE & NUMBER -->
+    <div class="cert-meta">
+      <div class="cert-date" id="cert-date">Abidjan, le 31 mai 2026</div>
+      <div class="cert-num" id="cert-num">N° SX-ACAD-2026-001</div>
+    </div>
+
+    <!-- SEAL -->
+    <div class="seal-area">
+      <div class="seal">
+        <div class="seal-ring">
+          <div class="seal-inner">Sx</div>
+        </div>
+      </div>
+      <div class="seal-label">Certified</div>
+    </div>
+
+  </div><!-- /cert -->
+
+  <!-- EDIT PANEL -->
+  <div class="edit-panel">
+    <h3>✏️ Personnaliser le certificat</h3>
+    <div class="edit-row">
+      <div class="edit-group">
+        <label>Nom du lauréat</label>
+        <input type="text" id="e-name" value="Amadou Traoré" oninput="update()">
+      </div>
+      <div class="edit-group">
+        <label>Domaine de formation</label>
+        <select id="e-domain" onchange="updateDomain()">
+          <option value="Commerce & Retail">🏪 Commerce & Retail</option>
+          <option value="Santé & Médical">❤️ Santé & Médical</option>
+          <option value="Éducation & Formation">🎓 Éducation & Formation</option>
+          <option value="Finance & Banque">🏦 Finance & Banque</option>
+          <option value="Agriculture">🌾 Agriculture</option>
+          <option value="Juridique & Droit">⚖️ Juridique & Droit</option>
+          <option value="Marketing & Communication">📣 Marketing & Communication</option>
+          <option value="BTP & Construction">🔨 BTP & Construction</option>
+          <option value="Logistique & Transport">🚚 Logistique & Transport</option>
+          <option value="Créatifs — Design & Vidéo">🎨 Créatifs — Design & Vidéo</option>
+        </select>
+      </div>
+    </div>
+    <div class="edit-row">
+      <div class="edit-group">
+        <label>Date de délivrance</label>
+        <input type="text" id="e-date" value="Abidjan, le 31 mai 2026" oninput="update()">
+      </div>
+      <div class="edit-group">
+        <label>Numéro de certificat</label>
+        <input type="text" id="e-num" value="SX-ACAD-2026-001" oninput="update()">
+      </div>
+    </div>
+    <div class="edit-row">
+      <div class="edit-group">
+        <label>Signataire</label>
+        <input type="text" id="e-sig" value="Amadou Traoré" oninput="update()">
+      </div>
+      <div class="edit-group">
+        <label>Ville d'émission</label>
+        <input type="text" id="e-city" value="Abidjan" oninput="update()">
+      </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Imprimer / Sauvegarder en PDF</button>
+  </div>
+</div>
+
+<script>
+const domainDescriptions = {
+  "Commerce & Retail":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués au commerce et à la vente, incluant l'automatisation des relances, les chatbots de vente et l'analyse des performances.",
+  "Santé & Médical":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués au secteur médical, incluant la gestion des rendez-vous, la rédaction assistée et la recherche scientifique.",
+  "Éducation & Formation":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués à l'éducation, incluant la création de contenus pédagogiques, l'évaluation assistée et le tutorat IA.",
+  "Finance & Banque":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués à la finance, incluant l'analyse de données financières, la génération de rapports et la détection d'anomalies.",
+  "Agriculture":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués à l'agriculture, incluant les prévisions météo, la gestion des stocks et l'optimisation des ventes.",
+  "Juridique & Droit":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués au droit, incluant la recherche juridique, la rédaction d'actes et l'analyse de contrats.",
+  "Marketing & Communication":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués au marketing, incluant la création de contenus, le copywriting et l'analyse de campagnes.",
+  "BTP & Construction":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués au BTP, incluant la génération de devis, la gestion de chantiers et la réponse aux appels d'offres.",
+  "Logistique & Transport":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués à la logistique, incluant l'optimisation des itinéraires, la prévision de la demande et le suivi automatisé.",
+  "Créatifs — Design & Vidéo":"ayant démontré la maîtrise des outils d'intelligence artificielle appliqués aux métiers créatifs, incluant la génération d'images, le montage vidéo assisté et l'automatisation des livrables."
+};
+
+function update(){
+  const name=document.getElementById('e-name').value;
+  const sig=document.getElementById('e-sig').value;
+  const date=document.getElementById('e-date').value;
+  const num=document.getElementById('e-num').value;
+  document.getElementById('cert-name').textContent=name||'—';
+  document.getElementById('cert-sig-name').textContent=sig||'—';
+  const parts=sig.split(' ');
+  document.getElementById('cert-sig-script').textContent=parts.map((p,i)=>i===0?p[0]+'.':p).join(' ');
+  document.getElementById('cert-date').textContent=date;
+  document.getElementById('cert-num').textContent='N° '+num;
+}
+
+function updateDomain(){
+  const domain=document.getElementById('e-domain').value;
+  document.getElementById('cert-domain').textContent=domain;
+  document.getElementById('cert-course').textContent='Formation IA — '+domain;
+  document.getElementById('cert-desc').textContent=domainDescriptions[domain]||'';
+  update();
+}
+
+update();
+</script>
+</body>
+</html>
